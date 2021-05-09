@@ -1639,9 +1639,7 @@ onSubmitButtonGMap = function (queryText) {
     var city = document.getElementById("cityname").value;
 
     searchQuery = "https://www.google.com/search?safe=active&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk00MgnEm_ZHiOprUOCC5R5VeI-9FLA:1619779660987&q=hospital+near+" + city;
-    if (window.confirm("Would you like to go to the website to find the nearby hospitals?")) {
-        window.open(searchQuery, '_blank');
-    }
+    window.open(searchQuery, '_blank');
     chatWindow.talk(convo, "ice")
 }
 
