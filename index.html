@@ -745,113 +745,9 @@
 
     }
 
+    onSubmitButton = function (queryText) {
 
-
-    function cityTier(city) {
-      var majorCity = ["Mumbai", "mumbai", "MUMBAI", "Delhi", "delhi", "DELHI", "Chennai", "chennai", "CHENNAI", "Kolkata", "kolkata", "KOLKATA", "Bangalore", "bangalore", "BANGALORE", "Bengaluru", "bengaluru", "BENGALURU", "Gurugram", "gurugram", "GURUGRAM", "Gurgaon", "gurgaon", "GURGAON"];
-      var isMajorCity = majorCity.includes(city);
-      return isMajorCity
-    }
-
-    icufuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
-      }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (icu) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      console.log(searchquery)
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
-    }
-
-    icufunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
-      }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (icu) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
-    }
-
-    bedfuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
-      }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (bed) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
-    }
-
-    bedfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
-      }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (bed) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
-    }
-
-
-    oxygenBedSubmitButton = function() {
+      console.log(queryText)
 
       var searchquery = '';
       //var city = window.prompt("Enter the city where you need help:");
@@ -863,7 +759,7 @@
       if (cityTier(city)) {
         searchquery += 'verified '
       }
-      searchquery += city + ' ("oxygen bed") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
+      searchquery += city + ' (' + queryText + ') ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
       var todayDate = new Date();
       var numberOfDays = 3;
       todayDate.setDate(todayDate.getDate() - numberOfDays);
@@ -873,18 +769,98 @@
       var queryDate = y + '-' + mm + '-' + dd;
       twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
       window.open(twitterquery, '_blank');
-   /*if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
+      /*if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
         window.location.href = twitterquery, '_blank';
       }*/
       chatWindow.talk(convo, "ice")
     }
+
+
+
+    function cityTier(city) {
+      var majorCity = ["Mumbai", "mumbai", "MUMBAI", "Delhi", "delhi", "DELHI", "Chennai", "chennai", "CHENNAI", "Kolkata", "kolkata", "KOLKATA", "Bangalore", "bangalore", "BANGALORE", "Bengaluru", "bengaluru", "BENGALURU", "Gurugram", "gurugram", "GURUGRAM", "Gurgaon", "gurgaon", "GURGAON"];
+      var isMajorCity = majorCity.includes(city);
+      return isMajorCity
+    }
+
+    icufuncenglish = function () {
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'icu'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
+      }
+    }
+
+    icufunchindi = function () {
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'icu'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
+      }
+    }
+
+    bedfuncenglish = function () {
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'bed'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
+      }
+    }
+
+    bedfunchindi = function () {
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'bed'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
+      }
+
+      /*var searchquery = '';
+      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
+      if (!city) {
+        city = 'India'
+      }
+      if (cityTier(city)) {
+        searchquery += 'verified '
+      }
+      searchquery += city + ' (bed) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
+      var todayDate = new Date();
+      var numberOfDays = 3;
+      todayDate.setDate(todayDate.getDate() - numberOfDays);
+      var dd = todayDate.getDate();
+      var mm = todayDate.getMonth() + 1;
+      var y = todayDate.getFullYear();
+      var queryDate = y + '-' + mm + '-' + dd;
+      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
+      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
+        window.location.href = twitterquery, '_blank';
+      }
+      chatWindow.talk(convo, "ice")*/
+    }
+
 
     oxygenbedfuncenglish = function () {
 
       var dynamic = document.createElement("div");
       dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
         '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="oxygenBedSubmitButton()" type="submit" value="Search"></form></span>';
+        '<input onclick="onSubmitButton(' + "'oxygen bed'" + ')" type="submit" value="Search"></form></span>';
       var elements = document.getElementsByClassName("bubble-content");
       if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -914,916 +890,479 @@
     }
 
     oxygenbedfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen bed'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' ("oxygen bed") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     oxygenrefillfuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen refil'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' ("oxygen refill") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 7;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     oxygenrefillfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen refill'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' ("oxygen refill") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 7;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     oxygenfuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (oxygen) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     oxygenfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (oxygen) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     ventilatorfuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'ventilator'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (ventilator) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     ventilatorfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'ventilator'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (ventilator) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      searchquery = "verified " + city + " ventilator " + "-'not verified' -'un verified' -urgent -unverified -needed -required -need -needs -'Any verified lead'";
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' (plasma) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' (plasma) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     remdesivirfuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'remdesivir OR remdesevir OR ramdesivir OR ramdesevir'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (remdesivir OR remdesevir OR ramdesivir OR ramdesevir) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+
     }
 
     remdesivirfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'remdesivir OR remdesevir OR ramdesivir OR ramdesevir'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (remdesivir OR remdesevir OR ramdesivir OR ramdesevir) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     tocilizumabfuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'tocilizumab'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (tocilizumab) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+
     }
 
     tocilizumabfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'tocilizumab'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (tocilizumab) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     fabiflufuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'fabiflu OR faviflu'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (fabiflu OR faviflu) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+
     }
 
     fabiflufunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'fabiflu OR faviflu'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (fabiflu OR faviflu) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     favivirfuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'favivir OR favibir OR fabivir OR fabibir OR faviveer'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (favivir OR favibir OR fabivir OR fabibir OR faviveer) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+      
     }
 
     favivirfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'favivir OR favibir OR fabivir OR fabibir OR faviveer'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (favivir OR favibir OR fabivir OR fabibir OR faviveer) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     favipiravirfuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'favipiravir OR favipirabir OR favipiraveer OR fabipiravir'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (favipiravir OR favipirabir OR favipiraveer OR fabipiravir) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+
     }
 
     favipiravirfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'favipiravir OR favipirabir OR favipiraveer OR fabipiravir'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (favipiravir OR favipirabir OR favipiraveer OR fabipiravir) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     vaccinefunc = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help: (आपको किस शहर में मदद की ज़रूरत है?)");
-      if (!city) {
-        city = 'India'
+      
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'vaccine OR vaccination OR covaxin OR covishield'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (vaccine OR vaccination OR covaxin OR covishield) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts? (क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?)\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+
     }
 
     oxygenconcfuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen concentrator'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' ("oxygen concentrator") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+
     }
 
     oxygenconcfunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen concentrator'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' ("oxygen concentrator") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 3;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+
     }
 
     plasmafuncapenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma A+'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma A+") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+
     }
 
     plasmafuncaphindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma A+'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma A+") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncanenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma A-'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma A-") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncanhindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma A-'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma A-") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncbpenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma B+'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma B+") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncbphindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma B+'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma B+") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncbnenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma B-'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma B-") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncbnhindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma B-'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma B-") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncopenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma O+'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma O+") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncophindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma O+'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma O+") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafunconenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma O-'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma O-") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafunconhindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma O-'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma O-") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncabpenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma AB+'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma AB+") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncabphindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma AB+'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma AB+") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncabnenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma AB-'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma AB-") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     plasmafuncabnhindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma AB-'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      // if (cityTier(city)){
-      //   searchquery += 'verified '
-      // }
-      searchquery += city + ' ("plasma AB-") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     foodfuncenglish = function () {
@@ -1899,99 +1438,53 @@
     }
 
     ambulancefuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'ambulance'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (ambulance) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     ambulancefunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'ambulance'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' (ambulance) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     homeicufuncenglish = function () {
-      var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
-      if (!city) {
-        city = 'India'
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'Home ICU'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' ("Home ICU") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+
     }
 
     homeicufunchindi = function () {
-      var searchquery = '';
-      var city = window.prompt("आपको किस शहर में मदद की ज़रूरत है?");
-      if (!city) {
-        city = 'India'
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'Home ICU'" + ')" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      if (cityTier(city)) {
-        searchquery += 'verified '
-      }
-      searchquery += city + ' ("Home ICU") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
-      var todayDate = new Date();
-      var numberOfDays = 5;
-      todayDate.setDate(todayDate.getDate() - numberOfDays);
-      var dd = todayDate.getDate();
-      var mm = todayDate.getMonth() + 1;
-      var y = todayDate.getFullYear();
-      var queryDate = y + '-' + mm + '-' + dd;
-      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
-      if (window.confirm("क्या आप संबंधित पोस्टों की जांच करने के लिए ट्विटर पर जाना चाहेंगे?\nएक बार जब यह ट्विटर पर पुनर्निर्देशित हो जाता है, तो कृपया LATEST टैब पर क्लिक करें")) {
-        window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
     }
 
     helperfunc = function () {
