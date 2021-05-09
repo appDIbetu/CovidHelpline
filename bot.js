@@ -1650,7 +1650,7 @@ hospfuncenglish = function () {
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
         '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton()" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input onclick="onSubmitButtonGMap()" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1662,7 +1662,7 @@ hospfunchindi = function () {
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
         '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton()" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input onclick="onSubmitButtonGMap()" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
