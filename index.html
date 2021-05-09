@@ -28,11 +28,12 @@
 
 </head>
 
+
 <body>
 
   <div id="main"></div>
-
   <script src="component/Bubbles.js"></script>
+
   <script>
     var chatWindow = new Bubbles(document.getElementById("main"), "chatWindow")
 
@@ -51,15 +52,15 @@
 
     var convo = {
       ice: {
-        says: ["Please choose a language."],
+        says: ["DISCLAIMER: The site just aggregates information from publicly available sources like twitter, google etc. Please verify before using any information. The developer is not liable or answerable for any loss. [अस्वीकरण: यह साइट केवल सार्वजनिक रूप से उपलब्ध स्रोतों जैसे ट्विटर, गूगल आदि से जानकारी एकत्र करती है। कृपया किसी भी जानकारी का उपयोग करने से पहले सत्यापित करें। डेवलपर किसी भी नुकसान के लिए उत्तरदायी या जवाबदेह नहीं है]।", "Please choose your language. [कृपया अपनी भाषा चुनें।]"],
         reply: [
           {
             question: "English",
             answer: "english"
           },
           {
-            question: "test2",
-            answer: "test2"
+            question: "हिंदी",
+            answer: "hindi"
           },
         ]
       },
@@ -67,7 +68,7 @@
         says: ["Please select the help you are in need for."],
         reply: [
           {
-            question: "Oxygen Cyclinder / Oxygen Refill / Oxygen Bed / Oxygen Concentrator",
+            question: "Oxygen Cylinder / Oxygen Refill / Oxygen Bed / Oxygen Concentrator",
             answer: "oxygenrootenglish"
           },
           {
@@ -86,11 +87,11 @@
             question: "Ambulance services",
             answer: "ambulancefuncenglish"
           },
-          
-          {
+
+          /*{
             question: "Hospitals Near Me",
             answer: "hospfuncenglish"
-          },
+          },*/
           {
             question: "Official Helpline Number",
             answer: "helplineenglish"
@@ -99,14 +100,14 @@
       },
 
       hindi: {
-        says: ["आपको कैसी सहायता चाहिए? नीचे क्लिक करें 👇"],
+        says: ["आपको किस चीज के लिए मदद चाहिए?"],
         reply: [
           {
             question: "आईसीयू / होम आईसीयू / बेड / वेंटिलेटर",
             answer: "icuroothindi"
           },
           {
-            question: "ऑक्सीजन",
+            question: "ऑक्सीजन सिलेंडर / ऑक्सीजन रिफिल / ऑक्सीजन बेड / ऑक्सीजन कन्सेन्ट्रेटर",
             answer: "oxygenroothindi"
           },
           {
@@ -117,30 +118,30 @@
             question: "दवा",
             answer: "medicinehindi"
           },
-          {
+          /*{
             question: "खाना",
             answer: "foodfunchindi"
-          },
+          },*/
           {
-            question: "रोगी वाहन",
+            question: "एम्बुलेंस सेवाएं",
             answer: "ambulancefunchindi"
           },
-          {
+          /*{
             question: "ऑनलाइन चिकित्सक परामर्श",
             answer: "onlineconchindi"
           },
           {
-            question: "पास के अस्पताल खोजें",
+            question: "आपके आस-पास के अस्पताल खोजें",
             answer: "hospfunchindi"
-          },
+          },*/
           {
             question: "आधिकारिक हेल्पलाइन नंबर",
             answer: "helplinehindi"
-          },
+          }/*,
           {
             question: "टीकाकरण स्लॉट- 2 सप्ताह",
             answer: "vaccinationhindi"
-          }
+          }*/
           // {
           //   question: "Vaccination (टीका)",
           //   answer: "vaccinefunc"
@@ -277,10 +278,10 @@
       "helplineenglish": {
         says: ["The helpline numbers are available for the below locations"],
         reply: [
-        {
+          {
             question: "Bihar",
             answer: "biharhelp"
-          },          
+          },
           {
             question: "Mumbai",
             answer: "mumbaihelp"
@@ -328,9 +329,9 @@
         says: ["हेल्पलाइन नंबर नीचे लिखे स्थानों के लिए उपलब्ध हैं"],
         reply: [
           {
-              question: "Bihar",
-              answer: "biharhelp"
-          },          
+            question: "Bihar",
+            answer: "biharhelp"
+          },
           {
             question: "मुंबई",
             answer: "mumbaihelp"
@@ -375,113 +376,113 @@
       },
 
       "biharhelp": {
-          says: [bihar_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [bihar_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "jkhelp": {
-          says: [jk_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [jk_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "punjabhelp": {
-          says: [punjab_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [punjab_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "keralahelp": {
-          says: [kerela_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [kerela_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "punehelp": {
-          says: [pune_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [pune_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "bengaluruhelp": {
-          says: [bengaluru_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [bengaluru_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "kolkatahelp": {
-          says: [kolkata_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [kolkata_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "chennaihelp": {
-          says: [chennai_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [chennai_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "mumbaihelp": {
-          says: [mumbai_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [mumbai_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
-      
+
       "surathelp": {
-          says: [surat_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [surat_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "jharkhandhelp": {
-          says: [jharkhand_helpline],
-          reply: [
-            {
-              question: "Start Over",
-              answer: "ice"
-            }
-          ],
+        says: [jharkhand_helpline],
+        reply: [
+          {
+            question: "Start Over",
+            answer: "ice"
+          }
+        ],
       },
 
       "onlineconcenglish": {
@@ -741,7 +742,7 @@
         ]
       }
 
-      
+
     }
 
 
@@ -758,7 +759,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (icu) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -783,7 +784,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (icu) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -807,7 +808,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (bed) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -831,7 +832,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (bed) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -849,13 +850,52 @@
       chatWindow.talk(convo, "ice")
     }
 
-    oxygenbedfuncenglish = function () {
+
+    oxygenBedSubmitButton = function() {
+
       var searchquery = '';
-      var city = window.prompt("Enter the city where you need help:");
+      //var city = window.prompt("Enter the city where you need help:");
+      var city = document.getElementById("cityname").value;
+
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
+        searchquery += 'verified '
+      }
+      searchquery += city + ' ("oxygen bed") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
+      var todayDate = new Date();
+      var numberOfDays = 3;
+      todayDate.setDate(todayDate.getDate() - numberOfDays);
+      var dd = todayDate.getDate();
+      var mm = todayDate.getMonth() + 1;
+      var y = todayDate.getFullYear();
+      var queryDate = y + '-' + mm + '-' + dd;
+      twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
+      window.open(twitterquery, '_blank');
+   /*if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
+        window.location.href = twitterquery, '_blank';
+      }*/
+      chatWindow.talk(convo, "ice")
+    }
+
+    oxygenbedfuncenglish = function () {
+
+      var dynamic = document.createElement("div");
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="oxygenBedSubmitButton()" type="submit" value="Search"></form></span>';
+      var elements = document.getElementsByClassName("bubble-content");
+      if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
+      }
+
+
+      /*if (!city) {
+        city = 'India'
+      }
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' ("oxygen bed") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -869,8 +909,8 @@
       twitterquery = "https://twitter.com/search?q=" + searchquery + " since%3A" + queryDate + '&f=live';
       if (window.confirm("Would you like to go to Twitter to check the relevant posts?\nOnce it redirects to Twitter, please click on the LATEST tab")) {
         window.location.href = twitterquery, '_blank';
-      }
-      chatWindow.talk(convo, "ice")
+      }*/
+      //chatWindow.talk(convo, "ice")
     }
 
     oxygenbedfunchindi = function () {
@@ -879,7 +919,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' ("oxygen bed") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -903,7 +943,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' ("oxygen refill") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -927,7 +967,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' ("oxygen refill") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -951,7 +991,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (oxygen) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -975,7 +1015,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (oxygen) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -999,7 +1039,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (ventilator) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1023,7 +1063,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (ventilator) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1096,7 +1136,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (remdesivir OR remdesevir OR ramdesivir OR ramdesevir) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1120,7 +1160,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (remdesivir OR remdesevir OR ramdesivir OR ramdesevir) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1144,7 +1184,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (tocilizumab) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1168,7 +1208,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (tocilizumab) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1192,7 +1232,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (fabiflu OR faviflu) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1216,7 +1256,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (fabiflu OR faviflu) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1240,7 +1280,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (favivir OR favibir OR fabivir OR fabibir OR faviveer) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1264,7 +1304,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (favivir OR favibir OR fabivir OR fabibir OR faviveer) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1288,7 +1328,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (favipiravir OR favipirabir OR favipiraveer OR fabipiravir) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1312,7 +1352,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (favipiravir OR favipirabir OR favipiraveer OR fabipiravir) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1336,7 +1376,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (vaccine OR vaccination OR covaxin OR covishield) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1360,7 +1400,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' ("oxygen concentrator") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1384,7 +1424,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' ("oxygen concentrator") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1812,7 +1852,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (' + medicineName + ') -"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1840,7 +1880,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (' + medicineName + ') -"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1864,7 +1904,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (ambulance) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1888,7 +1928,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' (ambulance) ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1912,7 +1952,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' ("Home ICU") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -1936,7 +1976,7 @@
       if (!city) {
         city = 'India'
       }
-      if (cityTier(city)){
+      if (cityTier(city)) {
         searchquery += 'verified '
       }
       searchquery += city + ' ("Home ICU") ' + '-"not verified" -"un verified" -"urgent" -"unverified" -"needed" -"required" -"need" -"needs" -"requirement" -"Any verified lead"';
@@ -2469,4 +2509,5 @@
 
     chatWindow.talk(convo)
   </script>
+
 </body>
