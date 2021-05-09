@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Covid-helpline Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" media="all" href="component/styles/setup.css">
+  <link rel="stylesheet" media="all" href="component/styles/says.css">
+  <link rel="stylesheet" media="all" href="component/styles/reply.css">
+  <link rel="stylesheet" media="all" href="component/styles/typing.css">
+  <link rel="stylesheet" media="all" href="component/styles/input.css">
+
+  <style>
+    body {
+      background: #bef7cf;
+    }
+
+    .bubble-container {
+      height: 100vh;
+    }
+
+    .bubble-container .input-wrap textarea {
+      margin: 0;
+      width: calc(100% - 30px);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="main"></div>
+
+  <script src="component/Bubbles.js"></script>
+  <script>
+    var chatWindow = new Bubbles(document.getElementById("main"), "chatWindow")
+
+    var convo = {
+      ice: {
+        says: ["test"],
+        reply: [
+          {
+            question: "test1",
+            answer: "test"
+          },
+          {
+            question: "test2",
+            answer: "test2"
+          },
+        ]
+      }
+    }
+
+    chatWindow.talk(convo)
+  </script>
+</body>
