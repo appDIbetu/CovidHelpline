@@ -35,6 +35,10 @@ var convo = {
                 answer: "ambulanceservicesEng"
             },
             {
+                question: "Hospitals Near Me",
+                answer: "hospfuncenglish"
+            },
+            {
                 question: "Oxygen Cylinder / Oxygen Refill / Oxygen Bed / Oxygen Concentrator",
                 answer: "parentOxygenEng"
             },
@@ -51,10 +55,6 @@ var convo = {
                 answer: "medicineenglish"
             },
             {
-                question: "Hospitals Near Me",
-                answer: "hospfuncenglish"
-            },
-            {
                 question: "Official Helpline Number",
                 answer: "helplineenglish"
             }
@@ -67,6 +67,10 @@ var convo = {
             {
                 question: "एम्बुलेंस सेवाएं",
                 answer: "ambulancefunchindi"
+            },
+            {
+                question: "आपके आस-पास के अस्पताल खोजें",
+                answer: "hospfunchindi"
             },
             {
                 question: "आईसीयू / होम आईसीयू / बेड / वेंटिलेटर",
@@ -92,10 +96,6 @@ var convo = {
               question: "ऑनलाइन चिकित्सक परामर्श",
               answer: "onlineconchindi"
             },*/
-            {
-                question: "आपके आस-पास के अस्पताल खोजें",
-                answer: "hospfunchindi"
-            },
             {
                 question: "आधिकारिक हेल्पलाइन नंबर",
                 answer: "helplinehindi"
