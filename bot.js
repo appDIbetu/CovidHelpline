@@ -15,7 +15,7 @@ var mumbai_helpline = "Based on Wards:<br>A: 022-22700007<br>B: 022-23759023/022
 
 var convo = {
     ice: {
-        says: ["Welcome to COVIDWarrior", "DISCLAIMER: The site just aggregates information from publicly available sources like twitter, google etc. Please verify before using any information. The developer is not liable or answerable for any loss. [अस्वीकरण: यह साइट केवल सार्वजनिक रूप से उपलब्ध स्रोतों जैसे ट्विटर, गूगल आदि से जानकारी एकत्र करती है। कृपया किसी भी जानकारी का उपयोग करने से पहले सत्यापित करें। डेवलपर किसी भी नुकसान के लिए उत्तरदायी या जवाबदेह नहीं है]।", "Please choose your language. [कृपया अपनी भाषा चुनें।]"],
+        says: ["Welcome to COVID Warrior", "DISCLAIMER: The site just aggregates information from publicly available sources like twitter, google etc. Please verify before using any information. The developer is not liable or answerable for any loss. [अस्वीकरण: यह साइट केवल सार्वजनिक रूप से उपलब्ध स्रोतों जैसे ट्विटर, गूगल आदि से जानकारी एकत्र करती है। कृपया किसी भी जानकारी का उपयोग करने से पहले सत्यापित करें। डेवलपर किसी भी नुकसान के लिए उत्तरदायी या जवाबदेह नहीं है]।", "Please choose your language. [कृपया अपनी भाषा चुनें।]"],
         reply: [
             {
                 question: "English",
