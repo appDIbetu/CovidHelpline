@@ -6,7 +6,7 @@
   <title>Covid-helpline Bot | Pan India</title>
 
   <meta name="description"
-    content="COVIDWARRIOR - Find urgent, latest, relevant emergency COVID-19 or coronavius resources like ICU, Home ICU, Beds, Ventilator, Oxygen, Oxygen Cylinder, Oxygen concentrator, Plasma, Medicine (Remdesivir, Favipiravir, Fabiflu, Favivir, Tocilizumab, Doxycycline), Ambulance, Food, Vaccination posted by users on Twitter for all cities and states in India (Pan India)">
+    content="COVIDWARRIOR - Find latest, urgent, relevant emergency COVID-19 or coronavius resources like Oxygen, ICU, Beds, Ventilator,Home ICU, Oxygen Cylinder, Oxygen concentrator, Oxygen refilling centers, Plasma, Medicine (Remdesivir, Fabiflu, Favivir, Favipiravir, Tocilizumab, Doxycycline), Ambulance, Food, Vaccination posted by users on Twitter for all cities and states in India (Pan India)">
   
     <meta name="keywords" content="corona,corona virus,covid-19 resources,COVID19 resources,Corona virus resources,oxygen,oxygen cylinder,oxygen refill,ambulance,plasma,corona helpline,covid helpline,corona virus helpline,oxygen concentrator">
     <meta name=”robots” content="index, follow">
@@ -70,7 +70,7 @@
 
     var convo = {
       ice: {
-        says: ["DISCLAIMER: The site just aggregates information from publicly available sources like twitter, google etc. Please verify before using any information. The developer is not liable or answerable for any loss. [अस्वीकरण: यह साइट केवल सार्वजनिक रूप से उपलब्ध स्रोतों जैसे ट्विटर, गूगल आदि से जानकारी एकत्र करती है। कृपया किसी भी जानकारी का उपयोग करने से पहले सत्यापित करें। डेवलपर किसी भी नुकसान के लिए उत्तरदायी या जवाबदेह नहीं है]।", "Please choose your language. [कृपया अपनी भाषा चुनें।]"],
+        says: ["Welcome to COVIDWarrior","DISCLAIMER: The site just aggregates information from publicly available sources like twitter, google etc. Please verify before using any information. The developer is not liable or answerable for any loss. [अस्वीकरण: यह साइट केवल सार्वजनिक रूप से उपलब्ध स्रोतों जैसे ट्विटर, गूगल आदि से जानकारी एकत्र करती है। कृपया किसी भी जानकारी का उपयोग करने से पहले सत्यापित करें। डेवलपर किसी भी नुकसान के लिए उत्तरदायी या जवाबदेह नहीं है]।", "Please choose your language. [कृपया अपनी भाषा चुनें।]"],
         reply: [
           {
             question: "English",
@@ -87,11 +87,11 @@
         reply: [
           {
             question: "Ambulance services",
-            answer: "ambulancefuncenglish"
+            answer: "ambulanceservicesEng"
           },
           {
             question: "Oxygen Cylinder / Oxygen Refill / Oxygen Bed / Oxygen Concentrator",
-            answer: "oxygenrootenglish"
+            answer: "parentOxygenEng"
           },
           {
             question: "Bed / ICU / Ventilator",
@@ -249,7 +249,7 @@
         ]
       },
 
-      "oxygenrootenglish": {
+      "parentOxygenEng": {
         says: ["What do you need help with?"],
         reply: [
           {
@@ -1454,7 +1454,7 @@
       chatWindow.talk(convo, "ice")
     }
 
-    ambulancefuncenglish = function () {
+    ambulanceservicesEng = function () {
 
       var dynamic = document.createElement("div");
       dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
