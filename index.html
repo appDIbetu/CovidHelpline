@@ -68,6 +68,10 @@
         says: ["Please select the help you are in need for."],
         reply: [
           {
+            question: "Ambulance services",
+            answer: "ambulancefuncenglish"
+          },
+          {
             question: "Oxygen Cylinder / Oxygen Refill / Oxygen Bed / Oxygen Concentrator",
             answer: "oxygenrootenglish"
           },
@@ -82,10 +86,6 @@
           {
             question: "Medicine / Injection",
             answer: "medicineenglish"
-          },
-          {
-            question: "Ambulance services",
-            answer: "ambulancefuncenglish"
           },
 
           /*{
@@ -102,6 +102,10 @@
       hindi: {
         says: ["आपको किस चीज के लिए मदद चाहिए?"],
         reply: [
+          {
+            question: "एम्बुलेंस सेवाएं",
+            answer: "ambulancefunchindi"
+          },
           {
             question: "आईसीयू / होम आईसीयू / बेड / वेंटिलेटर",
             answer: "icuroothindi"
@@ -122,10 +126,6 @@
             question: "खाना",
             answer: "foodfunchindi"
           },*/
-          {
-            question: "एम्बुलेंस सेवाएं",
-            answer: "ambulancefunchindi"
-          },
           /*{
             question: "ऑनलाइन चिकित्सक परामर्श",
             answer: "onlineconchindi"
@@ -179,7 +179,7 @@
 
 
       "icurootenglish": {
-        says: ["What do you need help with? Click below 👇"],
+        says: ["What do you need help with?"],
         reply: [
           {
             question: "ICU",
@@ -206,7 +206,7 @@
 
 
       "icuroothindi": {
-        says: ["आपको कैसी सहायता चाहिए? नीचे क्लिक करें 👇"],
+        says: ["आपको कैसी सहायता चाहिए?"],
         reply: [
           {
             question: "आईसीयू",
@@ -232,7 +232,7 @@
       },
 
       "oxygenrootenglish": {
-        says: ["What do you need help with? Click below 👇"],
+        says: ["What do you need help with?"],
         reply: [
           {
             question: "Oxygen",
@@ -254,7 +254,7 @@
       },
 
       "oxygenroothindi": {
-        says: ["आपको कैसी सहायता चाहिए? नीचे क्लिक करें 👇"],
+        says: ["आपको कैसी सहायता चाहिए?"],
         reply: [
           {
             question: "ऑक्सीजन",
@@ -747,7 +747,6 @@
 
     onSubmitButton = function (queryText) {
 
-      console.log(queryText)
 
       var searchquery = '';
       //var city = window.prompt("Enter the city where you need help:");
@@ -903,9 +902,9 @@
 
     oxygenrefillfuncenglish = function () {
       var dynamic = document.createElement("div");
-      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'oxygen refil'" + ')" type="submit" value="Search"></form></span>';
+      dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action="#"><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen refill'" + ')" type="submit" value="Search"></form></span>';
       var elements = document.getElementsByClassName("bubble-content");
       if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1087,7 +1086,7 @@
         // just change the first, as you did in your post
         elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
-      
+
     }
 
     favivirfunchindi = function () {
@@ -1129,7 +1128,7 @@
     }
 
     vaccinefunc = function () {
-      
+
       var dynamic = document.createElement("div");
       dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
         '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
@@ -1143,7 +1142,7 @@
     }
 
     oxygenconcfuncenglish = function () {
-      
+
       var dynamic = document.createElement("div");
       dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
         '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
@@ -1438,6 +1437,7 @@
     }
 
     ambulancefuncenglish = function () {
+
       var dynamic = document.createElement("div");
       dynamic.innerHTML = '<br><br><br><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
         '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
@@ -1447,6 +1447,7 @@
         // just change the first, as you did in your post
         elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
       }
+
     }
 
     ambulancefunchindi = function () {
