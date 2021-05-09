@@ -1,3 +1,5 @@
+var tag = 0;
+
 var chatWindow = new Bubbles(document.getElementById("main"), "chatWindow")
 
 
@@ -707,12 +709,12 @@ var convo = {
 
 }
 
-onSubmitButton = function (queryText) {
+onSubmitButton = function (queryText, tagID) {
 
 
     var searchquery = '';
     //var city = window.prompt("Enter the city where you need help:");
-    var city = document.getElementById("cityname").value;
+    var city = document.getElementById(tagID).value;
 
     if (!city) {
         city = 'India'
@@ -745,10 +747,12 @@ function cityTier(city) {
 }
 
 icufuncenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'icu'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;" value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'icu', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;" value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -757,10 +761,12 @@ icufuncenglish = function () {
 }
 
 icufunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'icu'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;" value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'icu', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;" value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -769,10 +775,12 @@ icufunchindi = function () {
 }
 
 bedfuncenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'bed'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'bed', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -782,10 +790,12 @@ bedfuncenglish = function () {
 
 bedfunchindi = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'bed'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'bed', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -818,10 +828,12 @@ bedfunchindi = function () {
 
 oxygenbedfuncenglish = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'oxygen bed'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen bed', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -851,10 +863,12 @@ oxygenbedfuncenglish = function () {
 }
 
 oxygenbedfunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'oxygen bed'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen bed', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -863,10 +877,12 @@ oxygenbedfunchindi = function () {
 }
 
 oxygenrefillfuncenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action="#"><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'oxygen refill'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen refill', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -875,10 +891,12 @@ oxygenrefillfuncenglish = function () {
 }
 
 oxygenrefillfunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'oxygen refill'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen refill', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -887,10 +905,12 @@ oxygenrefillfunchindi = function () {
 }
 
 oxygenfuncenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'oxygen'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -899,10 +919,12 @@ oxygenfuncenglish = function () {
 }
 
 oxygenfunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'oxygen'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -911,10 +933,12 @@ oxygenfunchindi = function () {
 }
 
 ventilatorfuncenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'ventilator'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'ventilator', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -923,10 +947,12 @@ ventilatorfuncenglish = function () {
 }
 
 ventilatorfunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'ventilator'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'ventilator', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -935,10 +961,12 @@ ventilatorfunchindi = function () {
 }
 
 plasmafuncenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -947,10 +975,12 @@ plasmafuncenglish = function () {
 }
 
 plasmafunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -960,10 +990,12 @@ plasmafunchindi = function () {
 
 remdesivirfuncenglish = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'remdesivir OR remdesevir OR ramdesivir OR ramdesevir'" + ')" type="button" style="border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'remdesivir OR remdesevir OR ramdesivir OR ramdesevir', '" + inputID +"' " + ')" type="button" style="border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -973,10 +1005,12 @@ remdesivirfuncenglish = function () {
 }
 
 remdesivirfunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'remdesivir OR remdesevir OR ramdesivir OR ramdesevir'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'remdesivir OR remdesevir OR ramdesivir OR ramdesevir', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -987,10 +1021,12 @@ remdesivirfunchindi = function () {
 tocilizumabfuncenglish = function () {
 
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'tocilizumab'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'tocilizumab', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1000,10 +1036,12 @@ tocilizumabfuncenglish = function () {
 }
 
 tocilizumabfunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'tocilizumab'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'tocilizumab', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1013,10 +1051,12 @@ tocilizumabfunchindi = function () {
 
 fabiflufuncenglish = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'fabiflu OR faviflu'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'fabiflu OR faviflu', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1026,10 +1066,12 @@ fabiflufuncenglish = function () {
 }
 
 fabiflufunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'fabiflu OR faviflu'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'fabiflu OR faviflu', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1039,10 +1081,12 @@ fabiflufunchindi = function () {
 
 favivirfuncenglish = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'favivir OR favibir OR fabivir OR fabibir OR faviveer'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'favivir OR favibir OR fabivir OR fabibir OR faviveer', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1052,10 +1096,12 @@ favivirfuncenglish = function () {
 }
 
 favivirfunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'favivir OR favibir OR fabivir OR fabibir OR faviveer'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'favivir OR favibir OR fabivir OR fabibir OR faviveer', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1065,10 +1111,12 @@ favivirfunchindi = function () {
 
 favipiravirfuncenglish = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'favipiravir OR favipirabir OR favipiraveer OR fabipiravir'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'favipiravir OR favipirabir OR favipiraveer OR fabipiravir', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1078,10 +1126,12 @@ favipiravirfuncenglish = function () {
 }
 
 favipiravirfunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'favipiravir OR favipirabir OR favipiraveer OR fabipiravir'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'favipiravir OR favipirabir OR favipiraveer OR fabipiravir', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1091,10 +1141,12 @@ favipiravirfunchindi = function () {
 
 vaccinefunc = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'vaccine OR vaccination OR covaxin OR covishield'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'vaccine OR vaccination OR covaxin OR covishield', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1105,10 +1157,12 @@ vaccinefunc = function () {
 
 oxygenconcfuncenglish = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'oxygen concentrator'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen concentrator', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1119,10 +1173,12 @@ oxygenconcfuncenglish = function () {
 
 oxygenconcfunchindi = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'oxygen concentrator'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'oxygen concentrator', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1134,10 +1190,12 @@ oxygenconcfunchindi = function () {
 plasmafuncapenglish = function () {
 
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma A+'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma A+', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1147,10 +1205,12 @@ plasmafuncapenglish = function () {
 }
 
 plasmafuncaphindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma A+'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma A+', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1159,10 +1219,12 @@ plasmafuncaphindi = function () {
 }
 
 plasmafuncanenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma A-'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma A-', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1171,10 +1233,12 @@ plasmafuncanenglish = function () {
 }
 
 plasmafuncanhindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma A-'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma A-', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1183,10 +1247,12 @@ plasmafuncanhindi = function () {
 }
 
 plasmafuncbpenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma B+'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma B+', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1195,10 +1261,12 @@ plasmafuncbpenglish = function () {
 }
 
 plasmafuncbphindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma B+'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma B+', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1207,10 +1275,12 @@ plasmafuncbphindi = function () {
 }
 
 plasmafuncbnenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma B-'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma B-', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1219,10 +1289,12 @@ plasmafuncbnenglish = function () {
 }
 
 plasmafuncbnhindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma B-'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma B-', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1231,10 +1303,12 @@ plasmafuncbnhindi = function () {
 }
 
 plasmafuncopenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma O+'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma O+', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1243,10 +1317,12 @@ plasmafuncopenglish = function () {
 }
 
 plasmafuncophindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma O+'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma O+', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1255,10 +1331,12 @@ plasmafuncophindi = function () {
 }
 
 plasmafunconenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma O-'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma O-', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1267,10 +1345,12 @@ plasmafunconenglish = function () {
 }
 
 plasmafunconhindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma O-'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma O-', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1279,10 +1359,12 @@ plasmafunconhindi = function () {
 }
 
 plasmafuncabpenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma AB+'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma AB+', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1291,10 +1373,12 @@ plasmafuncabpenglish = function () {
 }
 
 plasmafuncabphindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma AB+'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma AB+', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1303,10 +1387,12 @@ plasmafuncabphindi = function () {
 }
 
 plasmafuncabnenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma AB-'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma AB-', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1315,10 +1401,12 @@ plasmafuncabnenglish = function () {
 }
 
 plasmafuncabnhindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'plasma AB-'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'plasma AB-', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1400,10 +1488,12 @@ othermedicinefunchindi = function () {
 
 ambulanceservicesEng = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'ambulance'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'ambulance', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1413,10 +1503,12 @@ ambulanceservicesEng = function () {
 }
 
 ambulancefunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'ambulance'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'ambulance', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1426,10 +1518,12 @@ ambulancefunchindi = function () {
 
 homeicufuncenglish = function () {
 
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'Home ICU'" + ')" type="button" style="border-radius:6px; padding:8px; border-radius:2px; padding:4px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'Home ICU', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border-radius:2px; padding:4px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1439,10 +1533,12 @@ homeicufuncenglish = function () {
 }
 
 homeicufunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButton(' + "'Home ICU'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton(' + "'Home ICU', '" + inputID +"' " + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1631,12 +1727,12 @@ plasmagiveredhindifunc = function () {
 }
 
 
-onSubmitButtonGMap = function (queryText) {
+onSubmitButtonGMap = function (tagID) {
 
 
     var searchquery = '';
     //var city = window.prompt("Enter the city where you need help:");
-    var city = document.getElementById("cityname").value;
+    var city = document.getElementById(tagID).value;
 
     searchQuery = "https://www.google.com/search?safe=active&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk00MgnEm_ZHiOprUOCC5R5VeI-9FLA:1619779660987&q=hospital+near+" + city;
     window.open(searchQuery, '_blank');
@@ -1645,10 +1741,12 @@ onSubmitButtonGMap = function (queryText) {
 
 
 hospfuncenglish = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButtonGMap()" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButtonGMap(' + "'" + inputID + "'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
@@ -1657,10 +1755,12 @@ hospfuncenglish = function () {
 }
 
 hospfunchindi = function () {
+    tag = tag +1
+    let inputID = 'cityname' + tag
     var dynamic = document.createElement("div");
     dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
-        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
-        '<input onclick="onSubmitButtonGMap()" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+        '<input  style="height:20px;" type = "text" id = "'+ inputID +'" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButtonGMap(' + "'" + inputID + "'" + ')" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
     var elements = document.getElementsByClassName("bubble-content");
     if (elements.length > 0) {
         // just change the first, as you did in your post
