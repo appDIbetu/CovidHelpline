@@ -15,7 +15,7 @@ var mumbai_helpline = "Based on Wards:<br>A: 022-22700007<br>B: 022-23759023/022
 
 var convo = {
     ice: {
-        says: ["Welcome to COVID Warrior", "DISCLAIMER: The site just aggregates information from publicly available sources like twitter, google etc. Please verify before using any information. The developer is not liable or answerable for any loss. [अस्वीकरण: यह साइट केवल सार्वजनिक रूप से उपलब्ध स्रोतों जैसे ट्विटर, गूगल आदि से जानकारी एकत्र करती है। कृपया किसी भी जानकारी का उपयोग करने से पहले सत्यापित करें। डेवलपर किसी भी नुकसान के लिए उत्तरदायी या जवाबदेह नहीं है]।", "Please choose your language. [कृपया अपनी भाषा चुनें।]"],
+        says: ["Welcome to COVID Warrior!", "DISCLAIMER: The site just aggregates information from publicly available sources like twitter, google etc. Please verify before using any information. The developer is not liable or answerable for any loss. [अस्वीकरण: यह साइट केवल सार्वजनिक रूप से उपलब्ध स्रोतों जैसे ट्विटर, गूगल आदि से जानकारी एकत्र करती है। कृपया किसी भी जानकारी का उपयोग करने से पहले सत्यापित करें। डेवलपर किसी भी नुकसान के लिए उत्तरदायी या जवाबदेह नहीं है]।", "Please choose your language. [कृपया अपनी भाषा चुनें।]"],
         reply: [
             {
                 question: "English",
@@ -50,11 +50,10 @@ var convo = {
                 question: "Medicine / Injection",
                 answer: "medicineenglish"
             },
-
-            /*{
-              question: "Hospitals Near Me",
-              answer: "hospfuncenglish"
-            },*/
+            {
+                question: "Hospitals Near Me",
+                answer: "hospfuncenglish"
+            },
             {
                 question: "Official Helpline Number",
                 answer: "helplineenglish"
@@ -92,11 +91,11 @@ var convo = {
             /*{
               question: "ऑनलाइन चिकित्सक परामर्श",
               answer: "onlineconchindi"
-            },
-            {
-              question: "आपके आस-पास के अस्पताल खोजें",
-              answer: "hospfunchindi"
             },*/
+            {
+                question: "आपके आस-पास के अस्पताल खोजें",
+                answer: "hospfunchindi"
+            },
             {
                 question: "आधिकारिक हेल्पलाइन नंबर",
                 answer: "helplinehindi"
@@ -1631,28 +1630,44 @@ plasmagiveredhindifunc = function () {
     chatWindow.talk(convo, "ice")
 }
 
-hospfuncenglish = function () {
-    var city = window.prompt("Enter the pincode or the city or the locality name");
-    if (!city) {
-        city = 'India'
-    }
-    twitterquery = "https://www.google.com/search?safe=active&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk00MgnEm_ZHiOprUOCC5R5VeI-9FLA:1619779660987&q=hospital+near+" + city;
+
+onSubmitButtonGMap = function (queryText) {
+
+
+    var searchquery = '';
+    //var city = window.prompt("Enter the city where you need help:");
+    var city = document.getElementById("cityname").value;
+
+    searchQuery = "https://www.google.com/search?safe=active&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk00MgnEm_ZHiOprUOCC5R5VeI-9FLA:1619779660987&q=hospital+near+" + city;
     if (window.confirm("Would you like to go to the website to find the nearby hospitals?")) {
-        window.location.href = twitterquery, '_blank';
+        window.open(searchQuery, '_blank');
     }
     chatWindow.talk(convo, "ice")
 }
 
+
+hospfuncenglish = function () {
+    var dynamic = document.createElement("div");
+    dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton()" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+    var elements = document.getElementsByClassName("bubble-content");
+    if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
+    }
+}
+
 hospfunchindi = function () {
-    var city = window.prompt("पिनकोड या शहर या इलाके का नाम दर्ज करें?");
-    if (!city) {
-        city = 'India'
+    var dynamic = document.createElement("div");
+    dynamic.innerHTML = '<br><br><br><div class="input_back"><span class="bubble-button bubble-pick" style="text-align:right; animation-delay: 200ms;"><form action=""><label for="fname">Enter city name</label>' +
+        '<input  style="height:20px;" type = "text" id = "cityname" name = "fname"> <br><br>' +
+        '<input onclick="onSubmitButton()" type="button" style="border-radius:6px; padding:8px; border:none; background-color:#9a0fd1; color: white;"  value="Search"></form></span></div>';
+    var elements = document.getElementsByClassName("bubble-content");
+    if (elements.length > 0) {
+        // just change the first, as you did in your post
+        elements[elements.length - 1].parentNode.insertBefore(dynamic, elements[elements.length - 1].nextSibling);
     }
-    twitterquery = "https://www.google.com/search?safe=active&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk00MgnEm_ZHiOprUOCC5R5VeI-9FLA:1619779660987&q=hospital+near+" + city;
-    if (window.confirm("क्या आप पास के अस्पतालों को खोजने के लिए वेबसाइट पर जाना चाहेंगे?")) {
-        window.location.href = twitterquery, '_blank';
-    }
-    chatWindow.talk(convo, "ice")
 }
 
 mumbaihelpfuncenglish = function () {
